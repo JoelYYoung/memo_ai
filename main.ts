@@ -93,8 +93,8 @@ export default class MemoAIPlugin extends Plugin {
 	}
 
 	onunload() {
-		this.app.workspace.detachLeavesOfType(VIEW_TYPE_NOTE_CHUNKS);
-		this.app.workspace.detachLeavesOfType(VIEW_TYPE_PUSH_CENTER);
+		// Don't detach leaves here, as that would reset their positions
+		// when the plugin is reloaded, even if the user has moved them.
 	}
 
 	async loadSettings() {
