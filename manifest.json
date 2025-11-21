@@ -1,7 +1,7 @@
 {
 	"id": "memo-ai",
 	"name": "Memo AI",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
 	"description": "AI-powered chunk extraction and review system for your notes",
 	"author": "Jiawei Yang",
