@@ -254,7 +254,7 @@ export class ChunkManager {
 		
 		// Create chunk object
 		const chunk: Chunk = {
-			id: `${notePath}-${now}-${Math.random().toString(36).substr(2, 9)}`,
+			id: `${notePath}-${now}-${Math.random().toString(36).slice(2, 11)}`,
 			notePath,
 			content: content.trim(),
 			chunkType: 'knowledge',
