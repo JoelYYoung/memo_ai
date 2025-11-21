@@ -12,6 +12,7 @@ An Obsidian plugin that uses AI-powered chunk extraction and review with the SM2
   - **Delete**: Removes chunks for content that no longer exists
   - **Create**: Adds new chunks for new content
 - **Smart Content Analysis**: LLM understands context and semantic meaning, not just text matching
+
 <div align="center">
   <img src="./docs/chunks.jpg" width="100%" >
 </div>
@@ -28,6 +29,7 @@ An Obsidian plugin that uses AI-powered chunk extraction and review with the SM2
 - **Automatic Scheduling**: Top-scoring chunks are automatically scheduled for review
 - **Configurable Threshold**: Set a minimum score threshold for push recommendations
 - **Auto Cleanup**: Expired and completed pushes are automatically removed
+
 <div align="center">
  <img src="./docs/push_1.jpg" width="50%" >
 </div>
@@ -44,9 +46,11 @@ An Obsidian plugin that uses AI-powered chunk extraction and review with the SM2
   - Quick evaluation without AI interaction
 - **Flexible Workflow**: Choose between AI conversation or manual grading for each push
 - **Tabbed Interface**: Switch between manual and AI evaluation modes
+
 <div align="center">
 <img src="./docs/push_2.jpg" width="33%" ><img src="./docs/push_3.jpg" width="32.5%" >
 </div>
+
 ### 🔧 Chunk Management
 - **Importance Control**: Set importance level (1-3 stars) for each chunk
 - **Review Toggle**: Enable/disable review for specific chunks
