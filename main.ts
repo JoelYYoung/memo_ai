@@ -64,7 +64,7 @@ export default class MemoAIPlugin extends Plugin {
 			id: 'extract-chunks',
 			name: 'Extract chunks from current note',
 			callback: () => {
-				this.chunkManager.extractChunksFromActiveNote();
+				void this.chunkManager.extractChunksFromActiveNote();
 			}
 		});
 
@@ -72,7 +72,7 @@ export default class MemoAIPlugin extends Plugin {
 			id: 'open-note-chunks',
 			name: 'View chunks for current note',
 			callback: () => {
-				this.activateNoteChunksView();
+				void this.activateNoteChunksView();
 			}
 		});
 
@@ -80,7 +80,7 @@ export default class MemoAIPlugin extends Plugin {
 			id: 'open-push-center',
 			name: 'Open push center',
 			callback: () => {
-				this.activatePushCenterView();
+				void this.activatePushCenterView();
 			}
 		});
 
@@ -88,7 +88,7 @@ export default class MemoAIPlugin extends Plugin {
 		this.addSettingTab(new MemoAISettingTab(this.app, this));
 
 		this.app.workspace.onLayoutReady(() => {
-			this.activatePushCenterView();
+			void this.activatePushCenterView();
 		});
 	}
 
@@ -124,7 +124,7 @@ export default class MemoAIPlugin extends Plugin {
 			await leaf.setViewState({ type: VIEW_TYPE_NOTE_CHUNKS, active: true });
 		}
 		
-		workspace.revealLeaf(leaf);
+		void workspace.revealLeaf(leaf);
 	}
 
 	async activatePushCenterView() {
@@ -136,7 +136,7 @@ export default class MemoAIPlugin extends Plugin {
 			await leaf.setViewState({ type: VIEW_TYPE_PUSH_CENTER, active: true });
 		}
 		
-		workspace.revealLeaf(leaf);
+		await workspace.revealLeaf(leaf);
 	}
 
 	async openFileAtPath(path: string) {

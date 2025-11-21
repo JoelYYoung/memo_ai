@@ -371,7 +371,7 @@ export const PushCenterViewComponent: React.FC<PushCenterViewProps> = ({ plugin 
 													onChange={(e) => setMessageInputs(prev => ({ ...prev, [selectedPush.id]: e.target.value }))}
 													onKeyDown={(e) => {
 														if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
-															handleSendMessage(selectedPush.id);
+															void handleSendMessage(selectedPush.id);
 														}
 													}}
 													disabled={isLoading[selectedPush.id] || isLoadingEnd[selectedPush.id]}
@@ -379,7 +379,7 @@ export const PushCenterViewComponent: React.FC<PushCenterViewProps> = ({ plugin 
 												/>
 												<button 
 													className={`ai-notebook-push-send-btn ${isLoading[selectedPush.id] ? 'loading' : ''} ${isLoadingEnd[selectedPush.id] ? 'disabled' : ''}`}
-													onClick={() => handleSendMessage(selectedPush.id)}
+													onClick={() => void handleSendMessage(selectedPush.id)}
 													disabled={isLoading[selectedPush.id] || isLoadingEnd[selectedPush.id]}
 													title="Send (Cmd/Ctrl + Enter)"
 												>

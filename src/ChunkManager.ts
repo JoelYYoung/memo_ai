@@ -28,7 +28,7 @@ export class ChunkManager {
 
 	constructor(plugin: MemoAIPlugin) {
 		this.plugin = plugin;
-		this.loadChunks();
+		void this.loadChunks();
 	}
 
 	async loadChunks() {
