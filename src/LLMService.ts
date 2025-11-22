@@ -299,7 +299,7 @@ export class LLMService {
 		// Parse and validate grade
 		let grade = 3; // Default
 		const evaluation = result.evaluation && typeof result.evaluation === 'object' && result.evaluation !== null
-			? result.evaluation as { grade?: unknown; recommendation?: unknown; confidence?: unknown }
+			? result.evaluation as { grade?: unknown; recommendation?: string; confidence?: unknown }
 			: null;
 		
 		if (evaluation && evaluation.grade !== undefined && evaluation.grade !== null) {
@@ -314,7 +314,7 @@ export class LLMService {
 			shouldEnd: Boolean(result.should_end),
 			evaluation: evaluation ? {
 				grade: grade,
-				recommendation: String(evaluation.recommendation || ''),
+				recommendation: evaluation.recommendation || '',
 				confidence: evaluation.confidence !== undefined ? Number(evaluation.confidence) : undefined
 			} : undefined
 		};

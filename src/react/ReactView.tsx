@@ -9,7 +9,7 @@ export abstract class ReactView extends ItemView {
 		super(leaf);
 	}
 
-	async onOpen() {
+	async onOpen(): Promise<void> {
 		const container = this.containerEl.children[1] as HTMLElement;
 		container.empty();
 		container.addClass('ai-notebook-react-view');
@@ -19,7 +19,7 @@ export abstract class ReactView extends ItemView {
 		this.renderReact();
 	}
 
-	async onClose() {
+	async onClose(): Promise<void> {
 		if (this.reactRoot) {
 			this.reactRoot.unmount();
 			this.reactRoot = null;
